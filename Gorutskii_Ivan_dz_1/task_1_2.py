@@ -1,17 +1,31 @@
 def fill_list_cube(dataset: list) -> int:
     """Наполнение списка кубами"""
     for i in range(1, 1001):
-        dataset.append(i ** 3)
+        if i % 2 != 0:
+            dataset.append(i ** 3)
+
+
+def sum_digit_number(number: int) -> int:
+    """Алгоритм реализации суммы цифр числа"""
+    sum_ = 0
+    str_number = str(number)
+    for digit in str_number:
+        sum_ += int(digit)
+
+    if sum_ % 7 == 0:
+        return number
+    else:
+        return 0
 
 
 def sum_list_1(dataset: list) -> int:
     """Вычисляет сумму чисел списка dataset, сумма цифр делится на нацело на 7"""
-    sum_ = 0
+    sum_number = 0
     for item_ds in dataset:
-        if item_ds % 7 == 0:
-            sum_ += item_ds
-    
-    return sum_
+        sum_digit = sum_digit_number(item_ds)
+        sum_number += sum_digit
+
+    return sum_number
 
 
 def summ_list_2(dataset: list) -> int:
