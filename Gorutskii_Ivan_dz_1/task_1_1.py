@@ -5,7 +5,7 @@ def convert_time(duraction: int) -> str:
     """
     if duraction < 60:
         sec_ = duraction % 60
-        return f"{sec} сек"
+        return f"{sec_} сек"
     elif duraction < 3600:
         sec_ = duraction % 60
         min_ = duraction // 60
@@ -23,6 +23,6 @@ def convert_time(duraction: int) -> str:
         return f"{day_} дн {hour_} час {min_} мин {sec_} сек"
 
 
-duration = 400153
+duration = 32
 result =convert_time(duration)
 print(result)
