@@ -16,7 +16,7 @@ def transfer_list_in_str(list_in: list) -> str:
         if i + 1 != len(list_in):
             str_out += f"{rub_} руб {cop_} коп, "
         else:
-            str_out += f"{rub_} руб {cop_} коп."
+            str_out += f"{rub_} руб {cop_} коп"
 
     return str_out
 
