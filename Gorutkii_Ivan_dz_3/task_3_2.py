@@ -24,5 +24,12 @@ def num_translate(value: str) -> str:
     return str_out
 
 
-print(num_translate('nine'))
-print(num_translate("eight"))
+def num_translate_adv(value: str) -> str:
+    """алгоритм проверки верхнего  регистра"""
+    if value[0] == value[0].upper():
+        return num_translate(value).title()
+    else:
+        return num_translate(value)
+
+print(num_translate_adv('One'))
+print(num_translate_adv('five'))
