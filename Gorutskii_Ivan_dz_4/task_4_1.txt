@@ -1,0 +1,27 @@
+Requirement already satisfied: pillow in /usr/lib/python3/dist-packages (8.1.2)
+jshuck@jshuck ~/D/g/P/Gorutskii_Ivan_dz_4> pip show pillow
+Name: Pillow
+Version: 8.1.2
+Summary: Python Imaging Library (Fork)
+Home-page: https://python-pillow.org
+Author: Alex Clark (PIL Fork Author)
+Author-email: aclark@python-pillow.org
+License: HPND
+Location: /usr/lib/python3/dist-packages
+Requires: 
+Required-by: 
+
+
+jshuck@jshuck ~/D/g/P/Gorutskii_Ivan_dz_4> python -m venv venv
+jshuck@jshuck ~/D/g/P/Gorutskii_Ivan_dz_4> source venv/bin/activate.fish
+(venv) jshuck@jshuck ~/D/g/P/Gorutskii_Ivan_dz_4>
+
+(venv) jshuck@jshuck ~/D/g/P/Gorutskii_Ivan_dz_4> pip install pillow
+Using cached Pillow-9.0.0-cp39-cp39-manylinux_2_17_x86_64.manylinux2014_x86_64.whl (4.3 MB)
+Installing collected packages: pillow
+Successfully installed pillow-9.0.0
+(venv) jshuck@jshuck ~/D/g/P/Gorutskii_Ivan_dz_4>
+
+
+(venv) jshuck@jshuck ~/D/g/P/Gorutskii_Ivan_dz_4> deactivate
+jshuck@jshuck ~/D/g/P/Gorutskii_Ivan_dz_4>
