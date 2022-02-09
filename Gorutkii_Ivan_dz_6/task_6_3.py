@@ -1,4 +1,3 @@
-import sys
 import json
 
 
@@ -11,9 +10,28 @@ def prepare_dataset(path_users_file: str, path_hobby_file: str) -> dict:
     содержащий хобби, разделенные запятой по строке:return:
     Dict(str: Union[List[str]|None])
     """
-    # Ваш код пишите здесь
+    dict_out = {}
+    users = (line for line in open(path_users_file, 'r', encoding='utf-8'))
+    hobby = (line for line in open(path_hobby_file, 'r', encoding='utf-8'))
+    for user in users:
+        user = user.replace(',', ' ').strip()
+        try_hobby(user, hobby, dict_out)
+    try:
+        if next(hobby).strip() != '':
+            return 1
+    except StopIteration:
+        return dict_out
 
-    return  # верните словарь, либо завершите исполнение программы кодом 1
+
+def try_hobby(user: str, hobby: str, dict_out: dict):
+    """Обработка исключения StopIteration и заполнение dict"""
+    hobby_ = None
+    try:
+        hobby_ = next(hobby).strip()
+    except StopIteration:
+        dict_out.setdefault(user, None)
+    if hobby_ is not None:
+        dict_out.setdefault(user, hobby_.split(','))
 
 
 dict_out = prepare_dataset('users.csv', 'hobby.csv')

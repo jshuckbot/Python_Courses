@@ -11,9 +11,9 @@ def get_parse_attrs(line: str, spam_ip: set):
 
 list_out = list()
 spam_ip = {}
-with open('nginx_logs.txt', 'r', encoding='utf-8') as fr:
-    genenerator = (line.strip() for line in fr)
-    for line in genenerator:
-        get_parse_attrs(line, spam_ip)
+
+logs = (line for line in open('nginx_logs.txt', 'r', encoding='utf-8'))
+for log in logs:
+    list_out.append(get_parse_attrs(log, spam_ip))
 
 print(max(spam_ip), str(max(spam_ip.values())))

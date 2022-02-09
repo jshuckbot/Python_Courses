@@ -14,13 +14,10 @@ def get_parse_attrs(line: str) -> tuple:
     return ip_, request_, path_
 
 
-list_out = list()
-
-with open('nginx_logs.txt', 'r', encoding='utf-8') as fr:
-    list_in = fr.readlines()
-
-for line in list_in:
-    list_out.append(get_parse_attrs(line))
+list_out = []
+logs = (line for line in open('nginx_logs.txt', 'r', encoding='utf-8'))
+for log in logs:
+    list_out.append(get_parse_attrs(log))
 
 pprint(list_out)
 
