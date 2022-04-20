@@ -1,9 +1,14 @@
 from random import uniform
 from sys import getsizeof
 
+
 def transfer_list_in_str(list_in: list) -> str:
-    """Преобразует каждый элемент списка (вещественное число) в строку вида '<r> руб <kk> коп' и
-        формирует из них единую строковую переменную разделяя значения запятой."""
+    """
+    Преобразует каждый элемент списка (вещественное число) в строку вида
+    <r> руб <kk> коп' и формирует из них единую строковую переменную
+     разделяя значения запятой.
+     """
+
     str_out = ''
     for i in range(len(list_in)):
         money = str(list_in[i])
@@ -28,7 +33,9 @@ print(result_1)
 
 
 def sort_prices(list_in: list) -> list:
-    """Сортирует вещественные числа по возрастанию, не создавая нового списка"""
+    """
+    Сортирует вещественные числа по возрастанию, не создавая нового списка
+    """
     list_in.sort()
     return list_in
 
@@ -37,12 +44,11 @@ def sort_prices(list_in: list) -> list:
 id_ = id(my_list)
 size_ = getsizeof(my_list)
 result_2 = sort_prices(my_list)
-# зафиксировал здесь доказательство, что результат result_2 остался тем же объектом
+# зафиксировал здесь доказательство, что результат остался тем же объектом
 if id_ == id(my_list) and size_ == getsizeof(my_list):
     print(f'Адрес = {id_} и размер = {size_} неизменились.')
 
 print(result_2)
-
 
 
 def sort_price_adv(list_in: list) -> list:
