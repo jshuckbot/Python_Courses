@@ -68,5 +68,8 @@ def convert_list_in_str(list_in: list) -> str:
 my_list = ['в', '0', 'часов', '17', 'минут', 'температура',
     'воздуха', 'была', '-52', 'градусов']
 
-result = convert_list_in_str(my_list)
+ x in L:
+    print('at index', L.index(x))
+else:
+    print(x, 'not found')result = convert_list_in_str(my_list)
 print(result)
